@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zynergia — Crece tu red sin perder ningún seguimiento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .pulse { animation: pulse-dot 2s infinite; }
+    @keyframes float-up { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .float { animation: float-up 3s ease-in-out infinite; }
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .slide-in { opacity: 0; transform: translateX(-24px); transition: opacity 0.45s ease, transform 0.45s ease; }
+    .slide-in.visible { opacity: 1; transform: translateX(0); }
+  </style>
+</head>
+<body class="bg-white text-[#0F172A] antialiased">
+
+<!-- ═══════════════════════════════════════ NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 bg-[#004AFE] rounded-xl flex items-center justify-center font-bold text-white text-sm">Z</div>
+      <span id="navbar-brand" class="text-lg font-bold text-white tracking-tight transition-colors">Zynergia</span>
+    </a>
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#como-funciona" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Cómo funciona</a>
+      <a href="#automatizaciones" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Automatizaciones</a>
+      <a href="#fast-start" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Fast Start</a>
+    </div>
+    <a href="#descarga" id="navbar-cta" class="bg-[#004AFE] hover:bg-[#0039CC] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Descargar</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO -->
+<section class="bg-[#0A0F1E] min-h-screen flex items-center pt-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 py-20 w-full">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+
+      <!-- Copy -->
+      <div class="flex-1 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-[#004AFE]/10 border border-[#004AFE]/20 text-[#004AFE] text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+          <span class="w-1.5 h-1.5 bg-[#004AFE] rounded-full pulse"></span>
+          App para distribuidores de red
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Crece tu red sin perder <span class="text-[#004AFE]">ningún seguimiento</span>
+        </h1>
+        <p class="text-lg text-white/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+          Zynergia genera automáticamente tus tareas de WhatsApp según el tipo de contacto, las ventas y el avance de tus partners.
+          <span class="text-white/80"> Para que siempre hables con la persona correcta en el momento correcto.</span>
+        </p>
+        <div id="descarga" class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <a href="#" class="bg-[#004AFE] hover:bg-[#0039CC] text-white font-semibold px-7 py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 text-sm" style="box-shadow:0 0 32px rgba(0,74,254,0.35)">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Descargar en App Store
+          </a>
+          <a href="#" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white/80 hover:text-white font-semibold px-7 py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 text-sm">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.16.65.17.96.02l13.2-7.4-2.83-2.83-11.33 10.21zM.5 1.1C.19 1.42 0 1.9 0 2.53v18.94c0 .63.19 1.11.5 1.43l.08.07 10.61-10.61v-.25L.58 1.03.5 1.1zM20.49 10.51l-2.87-1.6-3.17 3.17 3.17 3.17 2.9-1.63c.83-.46.83-1.22-.03-1.71zM3.18.24l13.2 7.4-2.83 2.83L2.74.26c.13-.08.29-.1.44-.02z"/></svg>
+            Descargar en Google Play
+          </a>
+        </div>
+        <p class="text-white/30 text-xs text-center lg:text-left mt-3">Disponible en App Store y Google Play</p>
+      </div>
+
+      <!-- Phone mock -->
+      <div class="flex-shrink-0 relative hidden lg:block float">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-80 h-80 bg-[#004AFE] opacity-25 rounded-full absolute" style="filter:blur(90px)"></div>
+          <div class="w-60 h-60 bg-[#7C3AED] opacity-20 rounded-full absolute" style="filter:blur(70px);transform:translate(40px,40px)"></div>
+        </div>
+        <div class="relative z-10 w-64 h-[520px] bg-[#1A1F2E] rounded-[40px] border border-white/10 p-3 shadow-2xl">
+          <div class="w-24 h-6 bg-[#0A0F1E] rounded-full mx-auto mb-3"></div>
+          <div class="w-full h-full bg-[#F8FAFC] rounded-[28px] overflow-hidden flex flex-col">
+            <div class="bg-white px-4 pt-4 pb-3 border-b border-gray-100">
+              <div class="text-[10px] text-gray-400 mb-1">Lunes 7 Abr</div>
+              <div class="text-sm font-bold text-[#0F172A]">Tareas de hoy</div>
+            </div>
+            <div class="flex items-center justify-center py-4">
+              <div class="w-16 h-16 rounded-full border-4 border-[#004AFE] flex items-center justify-center" style="border-right-color:#e2e8f0">
+                <span class="text-[10px] font-bold text-[#004AFE]">3/8</span>
+              </div>
+            </div>
+            <div class="px-3 space-y-2 flex-1">
+              <div class="bg-white rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm border border-gray-50">
+                <div class="w-7 h-7 bg-gray-100 rounded-full flex-shrink-0"></div>
+                <div class="flex-1"><div class="text-[9px] font-semibold text-[#0F172A]">Ana García</div><div class="inline-block text-[8px] font-medium text-white px-1.5 py-0.5 rounded-full mt-0.5 bg-[#004AFE]">Invitación</div></div>
+                <div class="w-5 h-5 rounded-full border border-gray-200 flex-shrink-0"></div>
+              </div>
+              <div class="bg-white rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm border border-gray-50">
+                <div class="w-7 h-7 bg-gray-100 rounded-full flex-shrink-0"></div>
+                <div class="flex-1"><div class="text-[9px] font-semibold text-[#0F172A]">Luis Ramírez</div><div class="inline-block text-[8px] font-medium text-white px-1.5 py-0.5 rounded-full mt-0.5 bg-amber-400">Follow up</div></div>
+                <div class="w-5 h-5 rounded-full border border-gray-200 flex-shrink-0"></div>
+              </div>
+              <div class="bg-white rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm border border-gray-50">
+                <div class="w-7 h-7 bg-gray-100 rounded-full flex-shrink-0"></div>
+                <div class="flex-1"><div class="text-[9px] font-semibold text-[#0F172A]">María López</div><div class="inline-block text-[8px] font-medium text-white px-1.5 py-0.5 rounded-full mt-0.5 bg-green-500">Recompra</div></div>
+                <div class="w-5 h-5 rounded-full border border-gray-200 flex-shrink-0"></div>
+              </div>
+            </div>
+            <div class="bg-white border-t border-gray-100 h-10 flex items-center justify-around px-4 mt-2">
+              <div class="w-5 h-5 rounded bg-gray-200"></div>
+              <div class="w-5 h-5 rounded bg-[#004AFE]"></div>
+              <div class="w-5 h-5 rounded bg-gray-200"></div>
+              <div class="w-5 h-5 rounded bg-gray-200"></div>
+              <div class="w-5 h-5 rounded bg-gray-200"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating cards -->
+        <div class="absolute top-8 -left-32 z-20 w-36 rounded-xl px-3 py-2.5 shadow-xl border border-white/10" style="background:rgba(255,255,255,0.05);backdrop-filter:blur(12px)">
+          <div class="flex items-center gap-2 mb-1">
+            <svg class="w-3.5 h-3.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-[10px] text-white/50 font-medium">Seguimiento hoy</span>
+          </div>
+          <p class="text-xs font-bold text-white">3 mensajes</p>
+        </div>
+        <div class="absolute -right-32 top-1/2 -translate-y-1/2 z-20 w-36 rounded-xl px-3 py-2.5 shadow-xl border border-white/10" style="background:rgba(255,255,255,0.05);backdrop-filter:blur(12px)">
+          <div class="flex items-center gap-2 mb-1">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span class="text-[10px] text-white/50 font-medium">Recompra en</span>
+          </div>
+          <p class="text-xs font-bold text-white">3 días</p>
+        </div>
+        <div class="absolute bottom-16 -left-32 z-20 w-36 rounded-xl px-3 py-2.5 shadow-xl border border-white/10" style="background:rgba(255,255,255,0.05);backdrop-filter:blur(12px)">
+          <div class="flex items-center gap-2 mb-1">
+            <svg class="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <span class="text-[10px] text-white/50 font-medium">Partner en riesgo</span>
+          </div>
+          <p class="text-xs font-bold text-white">Acción urgente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CÓMO FUNCIONA -->
+<section id="como-funciona" class="bg-white py-20 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-[#004AFE] text-sm font-semibold uppercase tracking-widest mb-3">Cómo funciona</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F172A] leading-tight mb-4">De contacto a mensaje en 4 pasos</h2>
+      <p class="text-[#64748B] max-w-xl mx-auto">El flujo completo tarda menos de un minuto la primera vez. Después, Zynergia lo hace solo.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Step 1 -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-up" style="transition-delay:0s">
+        <div class="relative w-20 h-20 bg-white border-2 border-[#004AFE]/20 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <svg class="w-8 h-8 text-[#004AFE]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#004AFE] text-white text-[9px] font-bold rounded-full flex items-center justify-center">1</span>
+        </div>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Agrega un contacto</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">Crea el contacto con su nombre y teléfono de WhatsApp. Solo tarda 10 segundos.</p>
+        <div class="bg-[#F8FAFC] border border-gray-100 rounded-lg px-3 py-1.5"><span class="text-xs text-[#64748B] font-medium">Juan Pérez · +52 55 1234 5678</span></div>
+      </div>
+      <!-- Step 2 -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-up" style="transition-delay:0.1s">
+        <div class="relative w-20 h-20 bg-white border-2 border-[#004AFE]/20 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <svg class="w-8 h-8 text-[#004AFE]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#004AFE] text-white text-[9px] font-bold rounded-full flex items-center justify-center">2</span>
+        </div>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Selecciona el tipo</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">Define si es un Prospecto Producto, Prospecto Partner, Cliente o Partner.</p>
+        <div class="bg-[#F8FAFC] border border-gray-100 rounded-lg px-3 py-1.5"><span class="text-xs text-[#64748B] font-medium">Tipo: Prospecto Producto →</span></div>
+      </div>
+      <!-- Step 3 -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-up" style="transition-delay:0.2s">
+        <div class="relative w-20 h-20 bg-white border-2 border-[#004AFE]/20 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <svg class="w-8 h-8 text-[#004AFE]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#004AFE] text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+        </div>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Zynergia genera las tareas</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">Automáticamente crea la secuencia de 6 mensajes con fechas perfectas.</p>
+        <div class="bg-[#F8FAFC] border border-gray-100 rounded-lg px-3 py-1.5"><span class="text-xs text-[#64748B] font-medium">6 tareas creadas en 0.5 segundos</span></div>
+      </div>
+      <!-- Step 4 -->
+      <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-up" style="transition-delay:0.3s">
+        <div class="relative w-20 h-20 bg-white border-2 border-[#004AFE]/20 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <svg class="w-8 h-8 text-[#004AFE]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#004AFE] text-white text-[9px] font-bold rounded-full flex items-center justify-center">4</span>
+        </div>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Envías por WhatsApp</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">Elige el tono del mensaje (general, amigable o directo) y WhatsApp se abre listo.</p>
+        <div class="bg-[#F8FAFC] border border-gray-100 rounded-lg px-3 py-1.5"><span class="text-xs text-[#64748B] font-medium">"Hola Juan, ¿cómo has estado?..."</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AUTOMATIZACIONES -->
+<section id="automatizaciones" class="bg-[#F8FAFC] py-20 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-up">
+      <p class="text-[#004AFE] text-sm font-semibold uppercase tracking-widest mb-3">Automatizaciones</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F172A] leading-tight mb-4">Cada acción dispara la tarea correcta</h2>
+      <p class="text-[#64748B] max-w-xl mx-auto">No tienes que recordar qué mensaje mandar ni cuándo. Zynergia lo sabe por ti.</p>
+    </div>
+    <div class="space-y-4 max-w-3xl mx-auto">
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 slide-in">
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-[#004AFE]/10 text-[#004AFE] flex-shrink-0">Prospecto Producto</span>
+        <svg class="w-4 h-4 text-gray-300 hidden sm:block flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <div class="flex-1 text-xs font-medium px-3 py-2 rounded-lg bg-blue-50 text-blue-700">Secuencia de 6 mensajes de seguimiento (días 0, 3, 7, 12, 18, 25)</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 slide-in" style="transition-delay:0.1s">
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 flex-shrink-0">Prospecto Partner</span>
+        <svg class="w-4 h-4 text-gray-300 hidden sm:block flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <div class="flex-1 text-xs font-medium px-3 py-2 rounded-lg bg-purple-50 text-purple-700">Secuencia de 6 mensajes de reclutamiento con copy específico de negocio</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 slide-in" style="transition-delay:0.2s">
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-green-100 text-green-700 flex-shrink-0">Nueva venta registrada</span>
+        <svg class="w-4 h-4 text-gray-300 hidden sm:block flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <div class="flex-1 text-xs font-medium px-3 py-2 rounded-lg bg-green-50 text-green-700">Recordatorios de recompra: 7 días antes, 3 días antes, 5 días después</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 slide-in" style="transition-delay:0.3s">
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 flex-shrink-0">Contacto → Cliente o Partner</span>
+        <svg class="w-4 h-4 text-gray-300 hidden sm:block flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <div class="flex-1 text-xs font-medium px-3 py-2 rounded-lg bg-amber-50 text-amber-700">Tarea automática de referidos a los 30 días del registro</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 slide-in" style="transition-delay:0.4s">
+        <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-red-100 text-red-700 flex-shrink-0">Partner pierde clientes activos</span>
+        <svg class="w-4 h-4 text-gray-300 hidden sm:block flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <div class="flex-1 text-xs font-medium px-3 py-2 rounded-lg bg-red-50 text-red-700">Alerta de urgencia: "Recuperar Q-Team" con mensaje de acción inmediata</div>
+      </div>
+    </div>
+    <p class="text-center text-sm text-[#64748B] mt-10 fade-up">
+      Todas las automatizaciones incluyen <span class="font-semibold text-[#0F172A]">3 versiones del mensaje</span> (general, amigable y directo) para que elijas el tono que funciona con cada persona.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FAST START -->
+<section id="fast-start" class="bg-white py-20 px-5">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-[#004AFE] text-sm font-semibold uppercase tracking-widest mb-3">Programa Fast Start</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F172A] leading-tight mb-4">120 días para alcanzar los 4 bonos</h2>
+      <p class="text-[#64748B] max-w-xl mx-auto">Zynergia rastrea en qué fase está cada partner de tu red y genera las tareas de apoyo correctas en cada etapa.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Q-Team -->
+      <div class="flex flex-col items-center text-center fade-up" style="transition-delay:0s">
+        <div class="relative z-10 w-20 h-20 bg-[#004AFE] rounded-2xl flex items-center justify-center mb-5 shadow-md">
+          <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#0F172A] text-white text-[9px] font-bold rounded-full flex items-center justify-center">1</span>
+        </div>
+        <span class="text-xs font-semibold text-[#004AFE] bg-[#004AFE]/5 border border-[#004AFE]/20 px-3 py-1 rounded-full mb-3">Días 1–30</span>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Q-Team</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">4 clientes activos con pedido automático</p>
+        <div class="bg-[#004AFE]/5 border border-[#004AFE]/20 rounded-xl px-3 py-2.5 w-full">
+          <p class="text-[10px] font-semibold text-[#004AFE] uppercase tracking-wide">Bono Q-Team</p>
+          <p class="text-base font-bold text-[#004AFE] mt-0.5">€100</p>
+        </div>
+      </div>
+      <!-- Fast Start N1 -->
+      <div class="flex flex-col items-center text-center fade-up" style="transition-delay:0.12s">
+        <div class="relative z-10 w-20 h-20 bg-purple-500 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+          <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.040.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#0F172A] text-white text-[9px] font-bold rounded-full flex items-center justify-center">2</span>
+        </div>
+        <span class="text-xs font-semibold text-purple-600 bg-purple-50 border border-purple-200 px-3 py-1 rounded-full mb-3">Días 35–60</span>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Fast Start N1</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">2 partners activos reclutados en tu equipo</p>
+        <div class="bg-purple-50 border border-purple-200 rounded-xl px-3 py-2.5 w-full">
+          <p class="text-[10px] font-semibold text-purple-600 uppercase tracking-wide">Bono Nivel 1</p>
+          <p class="text-base font-bold text-purple-600 mt-0.5">€400</p>
+        </div>
+      </div>
+      <!-- Fast Start N2 -->
+      <div class="flex flex-col items-center text-center fade-up" style="transition-delay:0.24s">
+        <div class="relative z-10 w-20 h-20 bg-amber-500 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+          <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#0F172A] text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+        </div>
+        <span class="text-xs font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full mb-3">Días 75–90</span>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">Fast Start N2</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">Tus 2 partners con 4 clientes activos cada uno</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5 w-full">
+          <p class="text-[10px] font-semibold text-amber-600 uppercase tracking-wide">Bono Nivel 2</p>
+          <p class="text-base font-bold text-amber-600 mt-0.5">€1,200</p>
+        </div>
+      </div>
+      <!-- X-Team -->
+      <div class="flex flex-col items-center text-center fade-up" style="transition-delay:0.36s">
+        <div class="relative z-10 w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center mb-5 shadow-md">
+          <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          <span class="absolute -top-2 -right-2 w-6 h-6 bg-[#0F172A] text-white text-[9px] font-bold rounded-full flex items-center justify-center">4</span>
+        </div>
+        <span class="text-xs font-semibold text-green-600 bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3">Días 110–120</span>
+        <h3 class="text-base font-bold text-[#0F172A] mb-2">X-Team</h3>
+        <p class="text-[#64748B] text-sm leading-relaxed mb-3">10+ clientes activos en total en la red</p>
+        <div class="bg-green-50 border border-green-200 rounded-xl px-3 py-2.5 w-full">
+          <p class="text-[10px] font-semibold text-green-600 uppercase tracking-wide">Bono X-Team</p>
+          <p class="text-base font-bold text-green-600 mt-0.5">€150</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 bg-[#F8FAFC] rounded-2xl border border-gray-100 p-6 text-center fade-up">
+      <p class="text-[#64748B] text-sm">
+        Si un partner cae por debajo del Q-Team, <span class="font-semibold text-[#0F172A]">Zynergia genera automáticamente una alerta de urgencia</span> para que actúes antes de perder el bono.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CTA FINAL -->
+<section class="bg-[#0A0F1E] py-24 px-5">
+  <div class="max-w-3xl mx-auto text-center fade-up">
+    <div class="w-16 h-16 bg-[#004AFE]/10 border border-[#004AFE]/20 rounded-2xl flex items-center justify-center mx-auto mb-7">
+      <svg class="w-7 h-7 text-[#004AFE]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 4.5h3M6.75 15h.008v.008H6.75V15zm0-4.5h.008v.008H6.75v-.008z"/></svg>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
+      Empieza hoy y organiza tu negocio <span class="text-[#004AFE]">desde el primer día</span>
+    </h2>
+    <p class="text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+      Deja de gestionar tu red en notas y grupos de WhatsApp. Zynergia lo hace automáticamente para que tú te enfoques en crecer.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="bg-[#004AFE] hover:bg-[#0039CC] text-white font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Descargar en App Store
+      </a>
+      <a href="#" class="bg-[#004AFE] hover:bg-[#0039CC] text-white font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.16.65.17.96.02l13.2-7.4-2.83-2.83-11.33 10.21zM.5 1.1C.19 1.42 0 1.9 0 2.53v18.94c0 .63.19 1.11.5 1.43l.08.07 10.61-10.61v-.25L.58 1.03.5 1.1zM20.49 10.51l-2.87-1.6-3.17 3.17 3.17 3.17 2.9-1.63c.83-.46.83-1.22-.03-1.71zM3.18.24l13.2 7.4-2.83 2.83L2.74.26c.13-.08.29-.1.44-.02z"/></svg>
+        Descargar en Google Play
+      </a>
+    </div>
+    <div class="mt-10 flex items-center justify-center gap-6 text-white/40 text-xs">
+      <span>🍎 iOS</span>
+      <span class="w-px h-4 bg-white/10 inline-block"></span>
+      <span>🤖 Android</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER -->
+<footer class="bg-[#0A0F1E] border-t border-white/5 px-5 pt-16 pb-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-12 mb-12">
+      <div class="flex-shrink-0 max-w-xs">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-[#004AFE] rounded-xl flex items-center justify-center font-bold text-white text-sm">Z</div>
+          <span class="text-white font-bold text-lg">Zynergia</span>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed">La app de seguimiento para distribuidores que quieren crecer sin perder ningún contacto en el camino.</p>
+      </div>
+      <div class="flex flex-wrap gap-12 flex-1 justify-start md:justify-end">
+        <div>
+          <h4 class="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">Producto</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#como-funciona" class="text-white/50 hover:text-white text-sm transition-colors">Cómo funciona</a></li>
+            <li><a href="#automatizaciones" class="text-white/50 hover:text-white text-sm transition-colors">Automatizaciones</a></li>
+            <li><a href="#fast-start" class="text-white/50 hover:text-white text-sm transition-colors">Fast Start</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">Empresa</h4>
+          <ul class="space-y-2.5">
+            <li><a href="mailto:hola@zynergia.app" class="text-white/50 hover:text-white text-sm transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="/privacy.html" class="text-white/50 hover:text-white text-sm transition-colors">Privacidad</a></li>
+            <li><a href="/delete-account.html" class="text-white/50 hover:text-white text-sm transition-colors">Eliminar cuenta</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/30 text-xs">© 2026 Zynergia. Todos los derechos reservados.</p>
+      <span class="text-white/30 text-xs">iOS · Android</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  const brand = document.getElementById('navbar-brand');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-white', 'border-b', 'border-gray-200', 'shadow-sm');
+      brand.classList.remove('text-white');
+      brand.classList.add('text-[#0F172A]');
+      navLinks.forEach(l => { l.classList.remove('text-white/80'); l.classList.add('text-[#64748B]'); });
+    } else {
+      navbar.classList.remove('bg-white', 'border-b', 'border-gray-200', 'shadow-sm');
+      brand.classList.add('text-white');
+      brand.classList.remove('text-[#0F172A]');
+      navLinks.forEach(l => { l.classList.add('text-white/80'); l.classList.remove('text-[#64748B]'); });
+    }
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '-60px' });
+  document.querySelectorAll('.fade-up, .slide-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
